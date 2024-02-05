@@ -1,0 +1,39 @@
+
+<table class="table table-hover">
+   <thead>
+      <tr>
+         <th>Categoría</th>
+         <th>Monto</th>
+         <th>Estado</th>
+         <th>Fecha</th>
+      </tr>
+   </thead>
+   <tbody>
+      <tr>
+         <td>Categoría 1</td>
+         <td>Monto 1</td>
+         <td>Estado 1</td>
+         <td>Fecha 1</td>
+      </tr>
+      <tr>
+         <td>Categoría 2</td>
+         <td>Monto 2</td>
+         <td>Estado 2</td>
+         <td>Fecha 2</td>
+      </tr>
+      <ng-container *ngFor="let req of listRequest, let i = index">
+         <ng-container 
+            *ngIf="
+               category_s.toLowerCase().includes(req.oidCategory.nombre) ||
+               state_s.toLowerCase().includes(req.oidStatus.nombre) ||
+               word_s.toLowerCase().includes(req.description)">
+                  <tr (click)="detailRequest()"><!---->
+                     <td>{{req.oidCategory.nombre}}</td>
+                     <td>{{req.amount}}</td>
+                     <td>{{req.oidStatus.nombre}}</td>
+                     <td>{{req.dateNow}}</td>
+                  </tr>
+         </ng-container>
+      </ng-container>
+   </tbody>
+</table>

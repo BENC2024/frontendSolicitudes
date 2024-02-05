@@ -1,0 +1,19 @@
+<!--Este es el listado de las solicitudes-->
+<div class="container d-flex justify-content-center">
+   <div class="row">
+      <p>Solicitudes</p>
+   </div>
+</div>
+
+<!--Componente de busqueda-->
+<app-search (category_s)="category_s" (state_s)="state_s" (word_s)="word_s"></app-search>
+
+
+<!--Componente de listado-->
+<app-request-table [category_s]="category_s" [state_s]="state_s" [word_s]="word_s"></app-request-table>
+
+
+<!--Boton para nueva solicitud-->
+<app-btn-new></app-btn-new>
+
+
